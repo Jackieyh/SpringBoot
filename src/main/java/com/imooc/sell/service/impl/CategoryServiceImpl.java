@@ -1,4 +1,4 @@
-package com.imooc.sell.impl;
+package com.imooc.sell.service.impl;
 
 import com.imooc.sell.dataobject.ProductCategory;
 import com.imooc.sell.repository.ProductCategoryRepository;
@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * 普通类
