@@ -4,6 +4,7 @@ import com.imooc.sell.dataobject.OrderDetail;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
