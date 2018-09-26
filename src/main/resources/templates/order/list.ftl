@@ -1,48 +1,53 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>卖家商品列表</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
-</head>
+
+<#include "../common/header.ftl">
 
 <body>
-<div class="container">
-    <div class="row clearfix">
 
-        <div class="col-md-12 column">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>
-                        订单id
-                    </th>
-                    <th>
-                        姓名
-                    </th>
-                    <th>
-                        手机号
-                    </th>
-                    <th>
-                        地址
-                    </th>
-                    <th>
-                        金额
-                    </th>
-                    <th>
-                        订单状态
-                    </th>
-                    <th>
-                        支付状态
-                    </th>
-                    <th>
-                        创建时间
-                    </th>
-                    <th colspan="2">
-                        操作
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
+<div id="wrapper" class="toggled">
+
+<#--边栏sidebar-->
+    <#include "../common/nav.ftl">
+
+<#--主要内容content-->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row clearfix">
+
+                <div class="col-md-12 column">
+                    <table class="table table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th>
+                                订单id
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                手机号
+                            </th>
+                            <th>
+                                地址
+                            </th>
+                            <th>
+                                金额
+                            </th>
+                            <th>
+                                订单状态
+                            </th>
+                            <th>
+                                支付状态
+                            </th>
+                            <th>
+                                创建时间
+                            </th>
+                            <th colspan="2">
+                                操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
                     <#list orderDTOPage.content as orderDTO>
                     <tr>
@@ -79,13 +84,13 @@
                     </tr>
                     </#list>
 
-                </tbody>
-            </table>
-        </div>
+                        </tbody>
+                    </table>
+                </div>
 
-    <#--分页-->
-        <div class="col-md-12 column">
-            <ul class="pagination pull-right">
+            <#--分页-->
+                <div class="col-md-12 column">
+                    <ul class="pagination pull-right">
                 <#if currentPage lte 1>
                 <li class="disabled">
                     <a href="#">上一页</a>
@@ -115,10 +120,14 @@
                     <a href="/sell/seller/order/list?page=${currentPage+1}&size=${size}">下一页</a>
                 </li>
                 </#if>
-            </ul>
-        </div>
+                    </ul>
+                </div>
 
+            </div>
+        </div>
     </div>
+
 </div>
+
 </body>
 </html>

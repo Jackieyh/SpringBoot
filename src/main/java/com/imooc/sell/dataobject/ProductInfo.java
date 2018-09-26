@@ -6,6 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * 普通类
@@ -27,6 +28,8 @@ public class ProductInfo {
     private String productIcon;
     private Integer productStatus;
     private Integer categoryType;
+    private Date createTime;
+    private Date updateTime;
 
     public Integer getProductStatus() {
         return productStatus;
