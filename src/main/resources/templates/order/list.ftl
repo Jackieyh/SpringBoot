@@ -62,16 +62,20 @@
                             ${orderDTO.getOrderAmount()}
                         </td>
                         <td>
-                            ${orderDTO.getOrderStatus()}
+                            ${orderDTO.getOrderStatusEnum().message}
                         </td>
                         <td>
-                            ${orderDTO.getPayStatus()}
+                            ${orderDTO.getPayStatusEnum().message}
                         </td>
                         <td>
                             ${orderDTO.getCreateTime()}
                         </td>
-                        <td>详情</td>
-                        <td>取消</td>
+                        <td><a href="/sell/seller/order/detail?orderId=${orderDTO.orderId}">详情</a></td>
+                        <td>
+                            <#if orderDTO.getOrderStatusEnum().message=="新订单">
+                                <a href="/sell/seller/order/cancel?orderId=${orderDTO.orderId}">取消</a>
+                            </#if>
+                        </td>
                     </tr>
                     </#list>
 
@@ -113,6 +117,7 @@
                 </#if>
             </ul>
         </div>
+
     </div>
 </div>
 </body>
