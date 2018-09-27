@@ -16,7 +16,7 @@ import java.util.Date;
 @Data
 public class SellerInfo {
     @Id
-    private String sellId;
+    private String sellerId;
 
     private String username;
 
