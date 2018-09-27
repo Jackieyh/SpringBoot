@@ -4,7 +4,7 @@ import com.imooc.sell.dataobject.ProductInfo;
 import lombok.Getter;
 
 @Getter
-public enum ProductStatusEnum {
+public enum ProductStatusEnum implements CodeEnum{
     up(0, "在架"),
     down(1, "下架");
 

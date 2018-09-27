@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 /**
  * @Author:Jackie
@@ -32,6 +33,10 @@ public class ProductCategory {
      * 类目编号
      */
     private Integer categoryType;
+
+    private Date createTime;
+
+    private Date updateTime;
 
     public Integer getCategoryId() {
         return categoryId;
