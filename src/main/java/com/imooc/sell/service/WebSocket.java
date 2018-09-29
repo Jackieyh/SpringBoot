@@ -43,4 +43,15 @@ public class WebSocket {
     public void onMessage(String message) {
         log.info("【websocket消息】收到客户端发来的消息:{}", message);
     }
+
+    public void sendMessage(String message) {
+        for (WebSocket webSocket : webSocketSet) {
+            log.error("【websocket消息】广播消息,message={}", message);
+            try {
+                webSocket.session.getBasicRemote().sendText(message);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
